@@ -1,0 +1,133 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%2345678901234567890123456789012345678901234567890123456789012345678901234567890
+%        1         2         3         4         5         6         7         8
+
+\documentclass[letterpaper, 10 pt, conference]{ieeeconf}  % Comment this line out if you need a4paper
+
+%\documentclass[a4paper, 10pt, conference]{ieeeconf}      % Use this line for a4 paper
+
+\IEEEoverridecommandlockouts                             %https://www.overleaf.com/2156968253fhhpgmhwnfrt % This command is only needed if 
+                                                          % you want to use the \thanks command
+
+\overrideIEEEmargins                                      % Needed to meet printer requirements.
+
+%In case you encounter the following error:
+%Error 1010 The PDF file may be corrupt (unable to open PDF file) OR
+%Error 1000 An error occurred while parsing a contents stream. Unable to analyze the PDF file.
+%This is a known problem with pdfLaTeX conversion filter. The file cannot be opened with acrobat reader
+%Please use one of the alternatives below to circumvent this error by uncommenting one or the other
+%\pdfobjcompresslevel=0
+%\pdfminorversion=4
+
+% See the \addtolength command later in the file to balance the column lengths
+% on the last page of the document
+
+% The following packages can be found on http:\\www.ctan.org
+\usepackage{graphics} % for pdf, bitmapped graphics files
+\usepackage{epsfig} % for postscript graphics files
+\usepackage{mathptmx} % assumes new font selection scheme installed
+\usepackage{times} % assumes new font selection scheme installed
+\usepackage{amsmath} % assumes amsmath package installed
+\usepackage{amssymb}  % assumes amsmath package installed
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{multirow}
+\usepackage{booktabs}
+\usepackage{comment} % for comment command
+\usepackage{soul, color} % for hl command
+\usepackage{hyperref}
+\title{\Large \bf Fraud Detection - A Machine Learning Perspective}
+\author{Vibhavasu Pasumarti - EP20BTECH11015}
+
+
+%\author{ <-this % stops a space
+% \thanks{}% <-this % stops a space
+% \thanks{$^{1}$ Undergraduate Student, Electrical Engineering, IIT Hyderabad
+%         {\tt\small ee15btech11030@iith.ac.in}}%
+% \thanks{$^{2}$Undergraduate Student, Electrical Engineering, IIT Hyderabad
+%         {\tt\small ee15btech11006@iith.ac.in}}%
+% \thanks{$^{3}$Associate Professor, Electrical Engineering, IIT Hyderabad
+%         {\tt\small ee15btech11006@iith.ac.in}}%
+%}
+
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+    We explore how various classification algorithms detect whether a given transaction is legitimate or fraudulent. A dataset of over 280,000 transactions is used for this project. The dataset contains only numerical features which are the result of a PCA transformation of original features. However, two features: ``Time elapsed between two transactions" and ``Amount" are preserved as is. The dataset presents an important challenge in that it is highly imbalanced. About 400 transactions are fraudulent. Hence, multiple imbalance handling algorithms are used and their effects on the classification are observed. 
+\end{abstract}
+
+\section{Introduction}\label{sec:intro}
+Credit Card frauds are a big problem today. Quickly detecting fraudulent transactions might give a better chance of recovery.
+
+\subsection*{Dataset}
+\begin{itemize}
+\item[-] The dataset obtained from Kaggle contains 284,807 transactions done in Europe during September 2013, out of which 492 have been marked fraudulent. Each transaction is marked whether fraudulent or not.
+\item[-] The dataset contains 30 features of which 28 features which have been obtained from PCA transformation of original features.
+\item[-] This has been done to preserve confidentiality.
+\item[-] However, ``Time elapsed between two transactions" and ``Transaction Amount" are presented as such and have not been treated with the former method.
+\end{itemize}
+
+\section{Objective}
+Explore how different Machine Learning algorithms work to classify the transactions in the given dataset as legitimate or fraudulent.\\
+
+In an ML perspective, this represents a \emph{Classification} problem.\\\\
+\uline{\textsc{Challenge:}} The dataset is highly imbalanced, with a significantly lower number of fraudulent transactions compared to legitimate ones.\\\\
+\uline{\textsc{Proposal:}} Probe multiple Imbalance handling techniques to see which results in the best detection.
+
+
+\section{Algorithms employed}
+\subsubsection{Classifiers}
+For this project, the following clssification algorithms are used:
+\begin{itemize}
+    \item Logistic Regression Classifier
+    \item k - Nearest Neighbours Classifier
+    \item SVM (Support Vector Machines)
+    \item Naïve Bayes Classifier
+    \item Decision Trees
+    \item Random Forest
+    % \item 
+\end{itemize}
+
+\subsubsection{Imbalance Handlers}
+The following methods are used
+\begin{itemize}
+    \item SMOTE
+    \item Re-sampling (Oversampling and Undersampling)
+    \item Boosting
+    \item Bagging
+    
+\end{itemize}
+% \section{Methods}\label{sec:methods}
+
+\section{Results}\label{sec:result}
+
+% \section{Discussion}\label{sec:discussion}
+
+% Blah
+
+% \subsection{Limitations}\label{sec:limitations}
+
+% Blah blah
+
+% \subsection{Future work}\label{sec:future}
+\section{References}
+\begin{itemize}
+    \item[-] \href{https://www.kaggle.com/datasets/joebeachcapital/credit-card-fraud/}{Dataset}
+    \item[-] \href{github}{Code}
+\end{itemize}
+
+
+\section{Learning Outcomes}
+\begin{itemize}
+    \item[-] Learnt the workings of different ML algorithms like Logistic Regression and k-NN classifier, Decision Trees, etc.
+    \item[-] Learnt practical difficulties with datasets: Imbalanaced datasets and methods used to handle such datasets.
+    \item[-] Implemented these algorithms using python using sklearn, etc
+\end{itemize}
+
+
+% \bibliographystyle{apalike}
+% \bibliography{example}
+
+\end{document}
